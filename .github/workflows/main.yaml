@@ -20,8 +20,8 @@ jobs:
     - name: Release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{v5.5}}
-        commit: ${{v5.5}}
+        tag: ${{github.ref_name}}
+        commit: ${{github.ref_name}}
         token: ${{secrets.GH_TOKEN}}
 
     - name: Setup Node
