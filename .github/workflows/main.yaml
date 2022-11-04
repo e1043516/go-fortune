@@ -45,11 +45,55 @@ jobs:
             "text": "slack notification 1 2 3",
             "blocks": [
               {
-                "type": "section",
+                "type": "header",
                 "text": {
-                  "type": "mrkdwn",
-                  "text": "slack testing by uglygeeky"
+                  "type": "plain_text",
+                  "text": "DipSA55 CI/CD Assignment Submission "
                 }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:*\nTay Le Er Joey"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Metriculation:*\n A0126060W"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:*\n<mailto:e1043516@u.nus.edu|e1043516@u.nus.edu>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Repository:*\n <https://github.com/e1043516/go-fortune.git|git://github.com/e1043516/go-fortune.git>"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Deployment:*\nhttps://myproject-production-93e3.up.railway.app"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "\n<https://myproject-production-93e3.up.railway.app| Open Application>"
+                  }
+                ]
               }
             ]
           }
