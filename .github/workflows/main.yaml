@@ -1,7 +1,9 @@
 name: go-fortune
 # trigger
 on: 
-  push
+  push:
+    branches:
+      - v[0-9].[0-9]
 
 jobs: 
   #job name,
@@ -39,7 +41,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "slack testing"
+                  "text": "slack testing by uglygeeky"
                 }
               }
             ]
