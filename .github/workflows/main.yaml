@@ -17,11 +17,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      # uses: ncipollo/release-action@v1
-      # with:
-      #   artifacts: "release.tar.gz,foo/*.txt"
-      #   bodyFile: "body.md"
-      #   token: ${{secrets.GH_TOKEN}}
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{v5.5}}
+        commit: ${{v5.5}}
+        token: ${{secrets.GH_TOKEN}}
 
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -36,7 +36,7 @@ jobs:
       env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
-    - name: Testing the slack notification
+    - name: Slack Notification
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
       with:
@@ -97,7 +97,7 @@ jobs:
               }
             ]
           }
-        
+        `
 
       env: 
         SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
