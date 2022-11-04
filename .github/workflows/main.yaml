@@ -9,7 +9,7 @@ jobs:
   go-fortune:
     if: ${{!startsWith(github.event.head_commit.message, '#NORUN')}}
     runs-on: ubuntu-latest
-    
+
     # list of steps to perform task
     steps:
     - name: Checkout
@@ -72,7 +72,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:*\n <https://github.com/e1043516/go-fortune.git|git://github.com/e1043516/go-fortune.git>"
+                    "text": "*Repository:*\n <@github.repositoryUrl>"
                   }
                 ]
               },
