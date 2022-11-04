@@ -1,0 +1,53 @@
+name: go-fortune
+# trigger
+on: 
+  push:
+    branches:
+    - "release"
+
+# Jobs in todo
+jobs: 
+  #job name,
+  todo:
+    #OS that this workflow will be runnning on
+    runs-on: ubuntu-latest
+
+    # list of steps to perform task
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with: 
+        node-version: 16
+      
+    - name: Railway
+      run: npm i -g @railway/cli
+
+    - name: Deploy
+      run: railway up
+      env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+    - name: Testing the slack notification
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        payload: |
+        {
+          "text": "slack notification 1 2 3",
+          "blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "slack testing"
+              }
+            }
+          ]
+        }
+
+      env: 
+        SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        
