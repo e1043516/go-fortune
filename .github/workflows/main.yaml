@@ -8,7 +8,7 @@ on:
 jobs: 
   #job name,
   go-fortune:
-    #OS that this workflow will be runnning on
+    #OS that this workflow will be runnning on ubuntu
     runs-on: ubuntu-latest
 
     # list of steps to perform task
