@@ -17,12 +17,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
     - name: Release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{github.ref_name}}
         commit: ${{github.ref_name}}
-        token: ${{secrets.GH_TOKEN}}
+        token: ${{secrets.GITH_TOKEN}}
 
     - name: Setup Node
       uses: actions/setup-node@v3
