@@ -1,9 +1,7 @@
 name: go-fortune
 # trigger
 on: 
-  push:
-    branches:
-    - "release"
+  push
 
 # Jobs in todo
 jobs: 
