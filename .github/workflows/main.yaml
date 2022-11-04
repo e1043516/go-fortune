@@ -31,21 +31,23 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
     - name: Testing the slack notification
+      id: slack
       uses: slackapi/slack-github-action@v1.23.0
       with:
         payload: |
-        {
-          "text": "slack notification 1 2 3",
-          "blocks": [
-            {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "slack testing"
+          {
+            "text": "slack notification 1 2 3",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "slack testing"
+                }
               }
-            }
-          ]
-        }
+            ]
+          }
+        
 
       env: 
         SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
