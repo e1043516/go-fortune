@@ -7,8 +7,7 @@ on:
 
 jobs: 
   go-fortune:
-  run_if:
-    if: (!startsWith(github.event.head_commit.message, '#Norun/')
+    if: ${{!startsWith(github.event.head_commit.message, '#Norun/'}}
     runs-on: ubuntu-latest
     # permissions: 
     #   contents: write
