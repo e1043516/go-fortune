@@ -72,7 +72,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:*\n <@github.repositoryUrl>"
+                    "text": "*Repository:*\n $ {{github.repository_owner}"
                   }
                 ]
               },
