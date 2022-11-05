@@ -90,7 +90,7 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "\n <${{railway.serviceUrl}}| Open Application>"
+                    "text": "\n <https://myproject-production-93e3.up.railway.app| Open Application>"
                   }
                 ]
               }
