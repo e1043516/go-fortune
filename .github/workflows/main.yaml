@@ -33,7 +33,7 @@ jobs:
     - name: Deploy Railway
       run: railway up
       env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{secrets.RAILWAY_TOKEN}}
 
     - name: Slack Notification
       id: slack
@@ -81,7 +81,7 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Deployment:*\nhttps://myproject-production-93e3.up.railway.app"
+                    "text": "*Deployment:*\n <${{secrets.RAILWAY_DEPLOYMENT_URL}}>"
                   }
                 ]
               },
@@ -90,7 +90,7 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "\n <https://myproject-production-93e3.up.railway.app| Open Application>"
+                    "text": "\n <${{secrets.RAILWAY_DEPLOYMENT_URL}}| Open Application>"
                   }
                 ]
               }
