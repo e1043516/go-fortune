@@ -1,5 +1,5 @@
 name: go-fortune
-# trigger
+#trigger
 on: 
   push:
     branches:
