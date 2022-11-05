@@ -12,22 +12,22 @@ jobs:
 
     # list of steps to perform task
     steps:
-    - name: Checkout
+    - name: Install Checkout
       uses: actions/checkout@v3
 
-    - name: Release
+    - name: Install Release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{github.ref_name}}
         commit: ${{github.ref_name}}
         token: ${{secrets.GITH_TOKEN}}
 
-    - name: Setup Node
+    - name: Install Node
       uses: actions/setup-node@v3
       with: 
         node-version: 16
       
-    - name: Railway
+    - name: Install Railway
       run: npm i -g @railway/cli
 
     - name: Deploy Railway
@@ -35,13 +35,12 @@ jobs:
       env:
           RAILWAY_TOKEN: ${{secrets.RAILWAY_TOKEN}}
 
-    - name: Slack Notification
+    - name: Display in Slack
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
       with:
         payload: |
           {
-
             "blocks": [
               {
                 "type": "header",
@@ -97,7 +96,7 @@ jobs:
             ]
           }
         
-        
+
       env: 
         SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
