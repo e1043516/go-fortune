@@ -59,7 +59,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Metriculation:*\n A0126060W"
+                    "text": "*Matriculation:*\n A0126060W"
                   }
                 ]
               },
@@ -90,7 +90,7 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "\n<https://myproject-production-93e3.up.railway.app| Open Application>"
+                    "text": "\n <${{railway.serviceUrl}}| Open Application>"
                   }
                 ]
               }
